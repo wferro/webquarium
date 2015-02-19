@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author kayala
  */
-public class FluidOuncesUnitConverter implements VolumeCalculator {
+public class FluidOuncesUnitConverter implements VolumeUnitConverter {
 
 	private static final BigDecimal CONVERSION_CONSTANT = BigDecimal.valueOf(33.814D);
 
