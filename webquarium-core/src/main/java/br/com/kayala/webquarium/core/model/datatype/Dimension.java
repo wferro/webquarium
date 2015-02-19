@@ -1,10 +1,10 @@
 package br.com.kayala.webquarium.core.model.datatype;
 
-import br.com.kayala.webquarium.core.calculator.dimension.CentimeterUnitConverter;
-import br.com.kayala.webquarium.core.calculator.dimension.DimensionUnitConverter;
-import br.com.kayala.webquarium.core.calculator.dimension.FeetUnitConverter;
-import br.com.kayala.webquarium.core.calculator.dimension.MeterUnitConverter;
-import br.com.kayala.webquarium.core.calculator.dimension.MillimeterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.dimension.CentimeterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.dimension.DimensionUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.dimension.FeetUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.dimension.MeterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.dimension.MillimeterUnitConverter;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Level;
