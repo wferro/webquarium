@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author kayala
  */
-public class CubicCentimeterUnitConverter implements VolumeCalculator {
+public class CubicCentimeterUnitConverter implements VolumeUnitConverter {
 
 	private static final BigDecimal CONVERSION_CONSTANT = BigDecimal.valueOf(1000D);
 
