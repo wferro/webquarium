@@ -71,7 +71,7 @@ public class Dimension implements Serializable {
 	/**
 	 * set converted value of a specified unit
 	 *
-	 * @param dimensionUnit value dimension unit
+	 * @param dimensionUnit target dimension unit
 	 * @param value
 	 */
 	public void setCalculatedValue(DimensionUnit dimensionUnit, BigDecimal value) {
