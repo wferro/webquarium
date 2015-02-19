@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author kayala
  */
-public class MilliliterUnitConverter implements VolumeCalculator {
+public class MilliliterUnitConverter implements VolumeUnitConverter {
 
 	private static final BigDecimal CONVERSION_CONSTANT = BigDecimal.valueOf(0.001D);
 
