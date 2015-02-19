@@ -1,11 +1,11 @@
 package br.com.kayala.webquarium.core.model.datatype;
 
-import br.com.kayala.webquarium.core.calculator.volume.CubicCentimeterUnitConverter;
-import br.com.kayala.webquarium.core.calculator.volume.FluidOuncesUnitConverter;
-import br.com.kayala.webquarium.core.calculator.volume.GallonUnitConverter;
-import br.com.kayala.webquarium.core.calculator.volume.LiterUnitConverter;
-import br.com.kayala.webquarium.core.calculator.volume.MilliliterUnitConverter;
-import br.com.kayala.webquarium.core.calculator.volume.VolumeUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.CubicCentimeterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.FluidOuncesUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.GallonUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.LiterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.MilliliterUnitConverter;
+import br.com.kayala.webquarium.core.unitconverter.volume.VolumeUnitConverter;
 import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Level;
