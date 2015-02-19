@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author kayala
  */
-public class GallonUnitConverter implements VolumeCalculator {
+public class GallonUnitConverter implements VolumeUnitConverter {
 
 	private static final BigDecimal CONVERSION_CONSTANT = BigDecimal.valueOf(0.26417D);
 
