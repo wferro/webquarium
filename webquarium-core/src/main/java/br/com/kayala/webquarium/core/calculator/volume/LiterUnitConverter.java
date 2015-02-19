@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  *
  * @author kayala
  */
-public class LiterUnitConverter implements VolumeCalculator {
+public class LiterUnitConverter implements VolumeUnitConverter {
 
 	@Override
 	public BigDecimal convertedValue(BigDecimal rawValue) {
