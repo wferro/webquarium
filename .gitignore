@@ -24,3 +24,4 @@ pom.xml.next
 release.properties
 
 nb-configuration.xml
+/webquarium-core/src/main/java/br/com/kayala/webquarium/core/temp/
