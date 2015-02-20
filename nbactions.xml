@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-Download Sources</actionName>
+            <displayName>Download Sources</displayName>
+            <goals>
+                <goal>dependency:sources</goal>
+                
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-Download Javadoc</actionName>
+            <displayName>Download Javadoc</displayName>
+            <goals>
+                <goal>dependency:resolve</goal>
+            </goals>
+            <properties>
+                <classifier>javadoc</classifier>
+            </properties>
+        </action>
+    </actions>
