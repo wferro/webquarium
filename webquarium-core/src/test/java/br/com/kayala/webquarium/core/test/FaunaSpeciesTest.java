@@ -1,6 +1,7 @@
 package br.com.kayala.webquarium.core.test;
 
 import br.com.kayala.webquarium.core.model.datatype.TankPosition;
+import br.com.kayala.webquarium.core.model.datatype.Temperature;
 import br.com.kayala.webquarium.core.model.entity.FaunaSpecies;
 import br.com.kayala.webquarium.core.model.entity.FaunaSpeciesCommonName;
 import br.com.kayala.webquarium.core.model.entity.Source;
@@ -79,8 +80,8 @@ public class FaunaSpeciesTest extends BaseTest {
 		faunaSpecies.setSpeciesClass("Classe junit");
 		faunaSpecies.setSubfamily("Sub-família junit");
 		faunaSpecies.setTankPosition(TankPosition.TopMiddle);
-		faunaSpecies.setTemperatureMax(28);
-		faunaSpecies.setTemperatureMin(23);
+		faunaSpecies.setTemperatureMax(new Temperature(BigDecimal.valueOf(28)));
+		faunaSpecies.setTemperatureMin(new Temperature(BigDecimal.valueOf(23)));
 
 		return repo.save(faunaSpecies).getId();
 	}
@@ -102,8 +103,8 @@ public class FaunaSpeciesTest extends BaseTest {
 		faunaSpecies.setGhMax(1);
 		faunaSpecies.setKhMin(10);
 		faunaSpecies.setKhMax(1);
-		faunaSpecies.setTemperatureMin(10);
-		faunaSpecies.setTemperatureMax(1);
+		faunaSpecies.setTemperatureMin(new Temperature(BigDecimal.TEN));
+		faunaSpecies.setTemperatureMax(new Temperature(BigDecimal.ONE));
 
 		Set<ConstraintViolation<FaunaSpecies>> violations = validator.validate(faunaSpecies);
 

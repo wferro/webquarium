@@ -6,29 +6,20 @@ import br.com.kayala.webquarium.core.unitconverter.volume.GallonUnitConverter;
 import br.com.kayala.webquarium.core.unitconverter.volume.LiterUnitConverter;
 import br.com.kayala.webquarium.core.unitconverter.volume.MilliliterUnitConverter;
 import br.com.kayala.webquarium.core.unitconverter.volume.VolumeUnitConverter;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Embeddable;
-import javax.validation.constraints.Min;
 
 /**
  * volume measure unit datatype
  *
  * @author kayala
  */
-@Embeddable
-public class Volume implements Serializable {
+public class Volume implements MeasureUnit {
 
-	@Min(1)
 	private BigDecimal rawValue;
 
-	/**
-	 * application base value. in liters
-	 *
-	 * @return
-	 */
+	@Override
 	public BigDecimal getRawValue() {
 		return rawValue;
 	}
@@ -75,7 +66,13 @@ public class Volume implements Serializable {
 	public void setCalculatedValue(VolumeUnit volumeUnit, BigDecimal convertedValue) {
 		this.rawValue = volumeUnit.getCalculator().rawValue(convertedValue);
 	}
+	
+	@Override
+	public String toString() {
+		return getRawValue().toPlainString();
+	}
 
+	
 	public enum VolumeUnit {
 
 		FluidOunces(FluidOuncesUnitConverter.class),

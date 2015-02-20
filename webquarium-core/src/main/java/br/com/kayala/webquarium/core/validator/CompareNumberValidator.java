@@ -48,7 +48,7 @@ public class CompareNumberValidator implements ConstraintValidator<CompareNumber
 		if (t == null) {
 			return true;
 		}
-
+	
 		EnumSet<CompareOperator> negativeResult = EnumSet.of(CompareOperator.LOWER_THAN, CompareOperator.LOWER_THAN_OR_EQUALS);
 		EnumSet<CompareOperator> zeroResult = EnumSet.of(CompareOperator.EQUALS, CompareOperator.LOWER_THAN_OR_EQUALS, CompareOperator.GREATER_THAN_OR_EQUALS);
 		EnumSet<CompareOperator> positiveResult = EnumSet.of(CompareOperator.GREATER_THAN, CompareOperator.GREATER_THAN_OR_EQUALS);

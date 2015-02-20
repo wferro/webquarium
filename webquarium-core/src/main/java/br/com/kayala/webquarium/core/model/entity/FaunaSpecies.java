@@ -1,6 +1,7 @@
 package br.com.kayala.webquarium.core.model.entity;
 
 import br.com.kayala.webquarium.core.model.datatype.TankPosition;
+import br.com.kayala.webquarium.core.model.datatype.Temperature;
 import br.com.kayala.webquarium.core.validator.annotation.CompareNumber;
 import br.com.kayala.webquarium.core.validator.annotation.CompareOperator;
 import java.io.Serializable;
@@ -25,7 +26,6 @@ import org.hibernate.search.annotations.Field;
 import org.hibernate.search.annotations.Indexed;
 import org.hibernate.search.annotations.IndexedEmbedded;
 
-// TODO: Full-text Search
 /**
  * Fauna species entity
  *
@@ -145,17 +145,13 @@ public class FaunaSpecies implements Serializable {
 	@Max(15)
 	private Integer khMax;
 
-	@Column
+	@Column(name = "temperatureMin")
 	@NotNull
-	@Min(0)
-	@Max(60)
-	private Integer temperatureMin;
+	private Temperature temperatureMin;
 
-	@Column
+	@Column(name = "temperatureMax")
 	@NotNull
-	@Min(0)
-	@Max(60)
-	private Integer temperatureMax;
+	private Temperature temperatureMax;
 
 	@Column
 	@NotNull
@@ -517,7 +513,7 @@ public class FaunaSpecies implements Serializable {
 	 *
 	 * @return
 	 */
-	public Integer getTemperatureMin() {
+	public Temperature getTemperatureMin() {
 		return temperatureMin;
 	}
 
@@ -525,7 +521,7 @@ public class FaunaSpecies implements Serializable {
 	 *
 	 * @param temperatureMin
 	 */
-	public void setTemperatureMin(Integer temperatureMin) {
+	public void setTemperatureMin(Temperature temperatureMin) {
 		this.temperatureMin = temperatureMin;
 	}
 
@@ -533,7 +529,7 @@ public class FaunaSpecies implements Serializable {
 	 *
 	 * @return
 	 */
-	public Integer getTemperatureMax() {
+	public Temperature getTemperatureMax() {
 		return temperatureMax;
 	}
 
@@ -541,7 +537,7 @@ public class FaunaSpecies implements Serializable {
 	 *
 	 * @param temperatureMax
 	 */
-	public void setTemperatureMax(Integer temperatureMax) {
+	public void setTemperatureMax(Temperature temperatureMax) {
 		this.temperatureMax = temperatureMax;
 	}
 

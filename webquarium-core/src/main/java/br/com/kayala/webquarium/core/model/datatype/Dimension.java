@@ -5,31 +5,20 @@ import br.com.kayala.webquarium.core.unitconverter.dimension.DimensionUnitConver
 import br.com.kayala.webquarium.core.unitconverter.dimension.FeetUnitConverter;
 import br.com.kayala.webquarium.core.unitconverter.dimension.MeterUnitConverter;
 import br.com.kayala.webquarium.core.unitconverter.dimension.MillimeterUnitConverter;
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.persistence.Embeddable;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
 
 /**
  * dimension measure unit datatype
  *
  * @author kayala
  */
-@Embeddable
-public class Dimension implements Serializable {
+public class Dimension implements MeasureUnit {
 
-	@NotNull
-	@Min(1)
 	private BigDecimal rawValue;
 
-	/**
-	 * application base value. in meters
-	 *
-	 * @return
-	 */
+	@Override
 	public BigDecimal getRawValue() {
 		return rawValue;
 	}
@@ -76,6 +65,11 @@ public class Dimension implements Serializable {
 	 */
 	public void setCalculatedValue(DimensionUnit dimensionUnit, BigDecimal value) {
 		this.rawValue = dimensionUnit.getCalculator().rawValue(value);
+	}
+
+	@Override
+	public String toString() {
+		return getRawValue().toPlainString();
 	}
 
 	public enum DimensionUnit {
