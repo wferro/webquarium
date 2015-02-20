@@ -5,7 +5,9 @@ import br.com.kayala.webquarium.core.model.entity.FaunaSpecies;
 import br.com.kayala.webquarium.core.model.entity.FaunaSpeciesCommonName;
 import br.com.kayala.webquarium.core.model.entity.Source;
 import br.com.kayala.webquarium.core.model.repository.FaunaSpeciesRepository;
+import br.com.kayala.webquarium.core.model.textsearch.FaunaSpeciesTextSearch;
 import java.math.BigDecimal;
+import java.util.List;
 import java.util.Set;
 import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
@@ -24,6 +26,9 @@ public class FaunaSpeciesTest extends BaseTest {
 
 	@Autowired
 	private FaunaSpeciesRepository repo;
+
+	@Autowired
+	private FaunaSpeciesTextSearch search;
 
 	private Long generatedId;
 
@@ -89,7 +94,7 @@ public class FaunaSpeciesTest extends BaseTest {
 	}
 
 	@Test
-	public void testCompareNumberValidator() {
+	public void compareNumberValidator() {
 		FaunaSpecies faunaSpecies = repo.findOne(generatedId);
 		faunaSpecies.setPhMin(BigDecimal.TEN);
 		faunaSpecies.setPhMax(BigDecimal.ONE);
@@ -106,4 +111,11 @@ public class FaunaSpeciesTest extends BaseTest {
 		Assert.assertEquals(4, violations.size());
 	}
 
+	@Test
+	public void fullTextSearch() {
+		List<FaunaSpecies> list = search.findInAllFields("informasoes");
+
+		Assert.assertNotNull(list);
+		Assert.assertEquals(1, list.size());
+	}
 }

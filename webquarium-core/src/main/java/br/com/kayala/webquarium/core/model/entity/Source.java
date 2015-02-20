@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.search.annotations.Field;
 
 /**
  * source and reference for fauna species information
@@ -24,6 +25,7 @@ public class Source implements Serializable {
 	@ManyToOne(optional = false)
 	private FaunaSpecies faunaSpecies;
 
+	@Field
 	@NotNull
 	@Size(min = 3, max = 1000)
 	private String sourceName;

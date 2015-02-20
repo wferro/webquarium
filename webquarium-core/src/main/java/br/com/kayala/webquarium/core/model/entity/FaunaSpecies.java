@@ -15,10 +15,15 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OrderColumn;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.search.annotations.Analyzer;
+import org.hibernate.search.annotations.Field;
+import org.hibernate.search.annotations.Indexed;
+import org.hibernate.search.annotations.IndexedEmbedded;
 
 // TODO: Full-text Search
 /**
@@ -32,6 +37,8 @@ import javax.validation.constraints.Size;
 	@CompareNumber(field1 = "khMin", operator = CompareOperator.LOWER_THAN_OR_EQUALS, field2 = "khMax"),
 	@CompareNumber(field1 = "temperatureMin", operator = CompareOperator.LOWER_THAN_OR_EQUALS, field2 = "temperatureMax")})
 @Entity
+@Indexed
+@Analyzer
 public class FaunaSpecies implements Serializable {
 
 	@Id
@@ -40,47 +47,60 @@ public class FaunaSpecies implements Serializable {
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String kigdom;
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String phylum;
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String speciesClass;
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String speciesOrder;
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String family;
 
 	@Size(max = 150)
 	@Column
+	@Field
 	private String subfamily;
 
 	@NotNull
 	@Size(min = 3, max = 150)
 	@Column
+	@Field
 	private String genus;
 
 	@NotNull
 	@Size(min = 3, max = 150)
 	@Column
+	@Field
 	private String species;
 
+	@IndexedEmbedded
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "faunaSpecies")
+	@OrderColumn(name = "idFaunaSpecies_faunaSpeciesCommonName")
 	List<FaunaSpeciesCommonName> commonNames = new ArrayList<>();
 
+	@Field
 	@Column
 	private String habitat;
 
+	@Field
 	@Column
 	private String characteristics;
 
+	@Field
 	@Column
 	@Size(max = 3000)
 	private String behavior;
@@ -142,18 +162,24 @@ public class FaunaSpecies implements Serializable {
 	private BigDecimal adultSize;
 
 	@Column
+	@Field
 	private String food;
 
 	@Column
+	@Field
 	private String sexualDimorphism;
 
 	@Column
+	@Field
 	private String reproduction;
 
 	@Column
+	@Field
 	private String otherInformation;
 
+	@IndexedEmbedded
 	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "faunaSpecies")
+	@OrderColumn(name = "idFaunaSpecies_source")
 	private List<Source> sources = new ArrayList<>();
 
 	@Column

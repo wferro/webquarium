@@ -5,9 +5,13 @@ import java.util.Properties;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.naming.NamingException;
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.sql.DataSource;
+import org.hibernate.search.jpa.FullTextEntityManager;
+import org.hibernate.search.jpa.Search;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
@@ -27,6 +31,7 @@ import org.springframework.validation.beanvalidation.LocalValidatorFactoryBean;
 @Configuration
 @EnableJpaRepositories(basePackages = {Constants.REPOSITORY_PACKAGE})
 @EnableTransactionManagement
+@ComponentScan(basePackages = "br.com.kayala.webquarium")
 public class JpaConfig {
 
 	/**
@@ -76,6 +81,11 @@ public class JpaConfig {
 		return factory.getObject();
 	}
 
+	@Bean
+	public FullTextEntityManager fullTextEntityManager(EntityManager em) {
+		return Search.getFullTextEntityManager(em);
+	}
+	
 	/**
 	 * create and configure transaction manager bean
 	 *
@@ -105,6 +115,9 @@ public class JpaConfig {
 		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
 		properties.setProperty("hibernate.show_sql", "true");
 		properties.setProperty("hibernate.format_sql", "true");
+		properties.setProperty("hibernate.search.default.directory_provider", "filesystem");
+		properties.setProperty("hibernate.search.default.indexBase", "/var/lucene/indexes");
+		properties.setProperty("hibernate.search.analyzer", "br.com.kayala.webquarium.core.infrastructure.analyzer.PortugueseAnalyzer");
 		return properties;
 	}
 

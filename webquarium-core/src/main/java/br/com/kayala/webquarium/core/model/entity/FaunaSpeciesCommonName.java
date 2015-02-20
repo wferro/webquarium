@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import org.hibernate.search.annotations.Field;
 
 /**
  * common names for a fauna species entity
@@ -25,6 +26,7 @@ public class FaunaSpeciesCommonName implements Serializable {
 	private FaunaSpecies faunaSpecies;
 
 	@NotNull
+	@Field
 	@Size(min = 3, max = 150)
 	private String name;
 
