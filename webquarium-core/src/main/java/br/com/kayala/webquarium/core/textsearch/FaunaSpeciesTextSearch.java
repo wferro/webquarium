@@ -3,17 +3,17 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.kayala.webquarium.core.model.textsearch;
+package br.com.kayala.webquarium.core.textsearch;
 
+import br.com.kayala.webquarium.core.model.entity.FaunaSpecies;
 import java.util.List;
 
 /**
  *
  * @author kayala
- * @param <T>
  */
-public interface TextSearch<T> {
+public interface FaunaSpeciesTextSearch extends TextSearch<FaunaSpecies> {
 
-	List<T> findByKeywords(String[] fields, String keyword);
+	List<FaunaSpecies> findInAllFields(String keyword);
 	
 }

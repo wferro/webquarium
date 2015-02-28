@@ -1,7 +1,7 @@
-package br.com.kayala.webquarium.core.model.textsearch.impl;
+package br.com.kayala.webquarium.core.textsearch.impl;
 
 import br.com.kayala.webquarium.core.model.entity.FaunaSpecies;
-import br.com.kayala.webquarium.core.model.textsearch.FaunaSpeciesTextSearch;
+import br.com.kayala.webquarium.core.textsearch.FaunaSpeciesTextSearch;
 import java.util.List;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;

@@ -1,6 +1,6 @@
-package br.com.kayala.webquarium.core.model.textsearch.impl;
+package br.com.kayala.webquarium.core.textsearch.impl;
 
-import br.com.kayala.webquarium.core.model.textsearch.TextSearch;
+import br.com.kayala.webquarium.core.textsearch.TextSearch;
 import java.util.List;
 import org.hibernate.search.jpa.FullTextEntityManager;
 import org.hibernate.search.query.dsl.QueryBuilder;
