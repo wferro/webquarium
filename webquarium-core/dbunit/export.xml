@@ -1,0 +1,225 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dataset>
+  <table name="FaunaSpecies">
+    <column>id</column>
+    <column>adultSize</column>
+    <column>behavior</column>
+    <column>characteristics</column>
+    <column>family</column>
+    <column>food</column>
+    <column>genus</column>
+    <column>ghMax</column>
+    <column>ghMin</column>
+    <column>habitat</column>
+    <column>imagePath</column>
+    <column>khMax</column>
+    <column>khMin</column>
+    <column>kigdom</column>
+    <column>otherInformation</column>
+    <column>phMax</column>
+    <column>phMin</column>
+    <column>phylum</column>
+    <column>reproduction</column>
+    <column>sexualDimorphism</column>
+    <column>species</column>
+    <column>speciesClass</column>
+    <column>speciesOrder</column>
+    <column>subfamily</column>
+    <column>tankPosition</column>
+    <column>temperatureMax</column>
+    <column>temperatureMin</column>
+    <row>
+      <value>1</value>
+      <value>5.50</value>
+      <value><![CDATA[Comportamento junit]]></value>
+      <value><![CDATA[Caracteristicas junit]]></value>
+      <value><![CDATA[Familia junit]]></value>
+      <value><![CDATA[Alimentação junit]]></value>
+      <value><![CDATA[Gênero junit]]></value>
+      <value>7</value>
+      <value>1</value>
+      <value><![CDATA[Habitat natural junit]]></value>
+      <value>/teste/imagem</value>
+      <value>9</value>
+      <value>1</value>
+      <value><![CDATA[Reino junit]]></value>
+      <value><![CDATA[Outras informações junit]]></value>
+      <value>8.50</value>
+      <value>6.50</value>
+      <value><![CDATA[Filo junit]]></value>
+      <value><![CDATA[Reprodução junit]]></value>
+      <value><![CDATA[Dimorfismo sexual junit]]></value>
+      <value><![CDATA[Espécie junit]]></value>
+      <value><![CDATA[Classe junit]]></value>
+      <value><![CDATA[Ordem junit]]></value>
+      <value><![CDATA[Sub-família junit]]></value>
+      <value>TM</value>
+      <value>28.00</value>
+      <value>23.00</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value>5.50</value>
+      <value><![CDATA[Comportamento junit]]></value>
+      <value><![CDATA[Caracteristicas junit]]></value>
+      <value><![CDATA[Familia junit]]></value>
+      <value><![CDATA[Alimentação junit]]></value>
+      <value><![CDATA[Gênero junit]]></value>
+      <value>7</value>
+      <value>1</value>
+      <value><![CDATA[Habitat natural junit]]></value>
+      <value>/teste/imagem</value>
+      <value>9</value>
+      <value>1</value>
+      <value><![CDATA[Reino junit]]></value>
+      <value><![CDATA[Outras informações junit]]></value>
+      <value>8.50</value>
+      <value>6.50</value>
+      <value><![CDATA[Filo junit]]></value>
+      <value><![CDATA[Reprodução junit]]></value>
+      <value><![CDATA[Dimorfismo sexual junit]]></value>
+      <value><![CDATA[Espécie junit]]></value>
+      <value><![CDATA[Classe junit]]></value>
+      <value><![CDATA[Ordem junit]]></value>
+      <value><![CDATA[Sub-família junit]]></value>
+      <value>TM</value>
+      <value>28.00</value>
+      <value>23.00</value>
+    </row>
+  </table>
+  <table name="FaunaSpeciesCommonName">
+    <column>id</column>
+    <column>name</column>
+    <column>faunaSpecies_id</column>
+    <column>idFaunaSpecies_faunaSpeciesCommonName</column>
+    <row>
+      <value>1</value>
+      <value><![CDATA[Nomo popular 1 junit]]></value>
+      <value>1</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value><![CDATA[Nomo popular 2 junit]]></value>
+      <value>1</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>3</value>
+      <value><![CDATA[Nomo popular 3 junit]]></value>
+      <value>1</value>
+      <value>2</value>
+    </row>
+    <row>
+      <value>4</value>
+      <value><![CDATA[Nomo popular 4 junit]]></value>
+      <value>1</value>
+      <value>3</value>
+    </row>
+    <row>
+      <value>5</value>
+      <value><![CDATA[Nomo popular 1 junit]]></value>
+      <value>2</value>
+      <value>0</value>
+    </row>
+    <row>
+      <value>6</value>
+      <value><![CDATA[Nomo popular 2 junit]]></value>
+      <value>2</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>7</value>
+      <value><![CDATA[Nomo popular 3 junit]]></value>
+      <value>2</value>
+      <value>2</value>
+    </row>
+    <row>
+      <value>8</value>
+      <value><![CDATA[Nomo popular 4 junit]]></value>
+      <value>2</value>
+      <value>3</value>
+    </row>
+  </table>
+  <table name="Source">
+    <column>id</column>
+    <column>sourceName</column>
+    <column>sourceUrl</column>
+    <row>
+      <value>1</value>
+      <value><![CDATA[Source 1 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>2</value>
+      <value><![CDATA[Source 2 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>3</value>
+      <value><![CDATA[Source 3 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>4</value>
+      <value><![CDATA[Source 4 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>5</value>
+      <value><![CDATA[Source 1 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>6</value>
+      <value><![CDATA[Source 2 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>7</value>
+      <value><![CDATA[Source 3 junit]]></value>
+      <null/>
+    </row>
+    <row>
+      <value>8</value>
+      <value><![CDATA[Source 4 junit]]></value>
+      <null/>
+    </row>
+  </table>
+  <table name="Source_FaunaSpecies">
+    <column>sources_id</column>
+    <column>faunaSpecies_id</column>
+    <row>
+      <value>1</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>2</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>3</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>4</value>
+      <value>1</value>
+    </row>
+    <row>
+      <value>5</value>
+      <value>2</value>
+    </row>
+    <row>
+      <value>6</value>
+      <value>2</value>
+    </row>
+    <row>
+      <value>7</value>
+      <value>2</value>
+    </row>
+    <row>
+      <value>8</value>
+      <value>2</value>
+    </row>
+  </table>
+</dataset>
