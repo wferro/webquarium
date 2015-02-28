@@ -5,8 +5,8 @@ import br.com.kayala.webquarium.core.model.datatype.Temperature;
 import br.com.kayala.webquarium.core.model.entity.FaunaSpecies;
 import br.com.kayala.webquarium.core.model.entity.FaunaSpeciesCommonName;
 import br.com.kayala.webquarium.core.model.entity.Source;
-import br.com.kayala.webquarium.core.model.repository.FaunaSpeciesRepository;
-import br.com.kayala.webquarium.core.model.textsearch.FaunaSpeciesTextSearch;
+import br.com.kayala.webquarium.core.repository.FaunaSpeciesRepository;
+import br.com.kayala.webquarium.core.textsearch.FaunaSpeciesTextSearch;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Set;
@@ -71,10 +71,22 @@ public class FaunaSpeciesTest extends BaseTest {
 		faunaSpecies.setReproduction("Reprodução junit");
 		faunaSpecies.setSexualDimorphism("Dimorfismo sexual junit");
 
-		faunaSpecies.getSources().add(new Source("Source 1 junit", faunaSpecies));
-		faunaSpecies.getSources().add(new Source("Source 2 junit", faunaSpecies));
-		faunaSpecies.getSources().add(new Source("Source 3 junit", faunaSpecies));
-		faunaSpecies.getSources().add(new Source("Source 4 junit", faunaSpecies));
+		Source source1 = new Source("Source 1 junit");
+		source1.getFaunaSpecies().add(faunaSpecies);
+
+		Source source2 = new Source("Source 2 junit");
+		source2.getFaunaSpecies().add(faunaSpecies);
+
+		Source source3 = new Source("Source 3 junit");
+		source3.getFaunaSpecies().add(faunaSpecies);
+
+		Source source4 = new Source("Source 4 junit");
+		source4.getFaunaSpecies().add(faunaSpecies);
+
+		faunaSpecies.getSources().add(source1);
+		faunaSpecies.getSources().add(source2);
+		faunaSpecies.getSources().add(source3);
+		faunaSpecies.getSources().add(source4);
 
 		faunaSpecies.setSpecies("Espécie junit");
 		faunaSpecies.setSpeciesClass("Classe junit");
