@@ -20,6 +20,6 @@ public class Constants {
 	/**
 	 * Spring Data JPA repository package to scan
 	 */
-	public static final String REPOSITORY_PACKAGE = "br.com.kayala.webquarium.core.model.repository";
+	public static final String REPOSITORY_PACKAGE = "br.com.kayala.webquarium.core.repository";
 
 }
