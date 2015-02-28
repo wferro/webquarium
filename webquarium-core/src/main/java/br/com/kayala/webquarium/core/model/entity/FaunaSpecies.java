@@ -15,6 +15,7 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.OrderColumn;
 import javax.validation.constraints.Max;
@@ -174,8 +175,7 @@ public class FaunaSpecies implements Serializable {
 	private String otherInformation;
 
 	@IndexedEmbedded
-	@OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "faunaSpecies")
-	@OrderColumn(name = "idFaunaSpecies_source")
+	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, mappedBy = "faunaSpecies")
 	private List<Source> sources = new ArrayList<>();
 
 	@Column

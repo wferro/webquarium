@@ -1,11 +1,13 @@
 package br.com.kayala.webquarium.core.model.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.ManyToMany;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 import org.hibernate.search.annotations.Field;
@@ -22,8 +24,8 @@ public class Source implements Serializable {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Long id;
 
-	@ManyToOne(optional = false)
-	private FaunaSpecies faunaSpecies;
+	@ManyToMany
+	private List<FaunaSpecies> faunaSpecies = new ArrayList<>();
 
 	@Field
 	@NotNull
@@ -45,9 +47,8 @@ public class Source implements Serializable {
 	 * @param source
 	 * @param faunaSpecies
 	 */
-	public Source(String source, FaunaSpecies faunaSpecies) {
+	public Source(String source) {
 		this.sourceName = source;
-		this.faunaSpecies = faunaSpecies;
 	}
 
 	/**
@@ -70,7 +71,7 @@ public class Source implements Serializable {
 	 *
 	 * @return
 	 */
-	public FaunaSpecies getFaunaSpecies() {
+	public List<FaunaSpecies> getFaunaSpecies() {
 		return faunaSpecies;
 	}
 
@@ -78,7 +79,7 @@ public class Source implements Serializable {
 	 *
 	 * @param faunaSpecies
 	 */
-	public void setFaunaSpecies(FaunaSpecies faunaSpecies) {
+	public void setFaunaSpecies(List<FaunaSpecies> faunaSpecies) {
 		this.faunaSpecies = faunaSpecies;
 	}
 
